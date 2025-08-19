@@ -1,18 +1,35 @@
 def solution(s):
-    s = s.split(' ')
-    result = []
+#     s = s.split(' ')
+#     result = []
+#     for i in s:
+#         if len(i) == 0:
+#             result.append(i)
+#             continue
+#         temp = ''
+#         for j in range(len(i)):
+#             if j%2 == 1:
+#                 temp = temp + i[j].lower()
+#             else:
+#                 temp = temp + i[j].upper()
+#         result.append(temp)
+    
+#     result = ' '.join(result)
+    answer = ''
+    time = 0
     for i in s:
-        if len(i) == 0:
-            result.append(i)
+        
+        if i == ' ':
+            answer += ' '
+            time = 0
             continue
-        temp = ''
-        for j in range(len(i)):
-            if j%2 == 1:
-                temp = temp + i[j].lower()
-            else:
-                temp = temp + i[j].upper()
-        result.append(temp)
+        
+        if time == 1:
+            answer += i.lower()
+            time = 0
+        else:
+            answer += i.upper()
+            time = 1
+        
+        
     
-    result = ' '.join(result)
-    
-    return result
+    return answer

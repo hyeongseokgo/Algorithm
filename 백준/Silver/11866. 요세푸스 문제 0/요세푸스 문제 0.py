@@ -1,12 +1,11 @@
 from collections import deque
 
 N, K = map(int, input().split())
-yose = list(range(1, N + 1))
+yose = deque(range(1, N + 1))
 answer = []
-idx = 0
 
 while yose:
-    idx = (idx + K - 1) % len(yose)
-    answer.append(yose.pop(idx))
+    yose.rotate(-(K - 1))
+    answer.append(yose.popleft())
     
 print("<" + ", ".join(map(str, answer)) + ">")

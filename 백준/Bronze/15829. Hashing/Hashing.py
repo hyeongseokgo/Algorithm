@@ -5,6 +5,6 @@ num = list(input())
 result = 0
 for i in range(len(num)):
     n = ord(num[i])-ord('a')+1
-    result += n*(31**i)%1234567891
+    result += n*pow(31, i, 1234567891)
 
-print(result)
+print(result%1234567891)
